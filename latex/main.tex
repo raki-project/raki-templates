@@ -1,0 +1,193 @@
+\documentclass[11pt,a4paper]{article}
+%
+%
+% settings
+%
+%
+\usepackage[utf8]{inputenc}
+\usepackage{scrextend} % for the labeling environment
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage[english]{babel}
+\usepackage[hyphens]{url}
+\usepackage[colorlinks,plainpages=false,hyperindex,pageanchor=true]{hyperref}
+\usepackage{array}
+\usepackage{float}%figure environment
+\usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage{booktabs}
+\usepackage{mdframed}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{comment}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage{adjustbox}
+\usepackage{pifont}
+\usepackage[table]{xcolor}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{mdwlist}
+\usepackage{setspace}
+\usepackage[a4paper, twoside=false, left=2.5cm, right=1.5cm, top=3.75cm, bottom=2.5cm, headsep=1.2cm]{geometry}
+\usepackage{csquotes}
+\usepackage{titlesec}
+\usepackage{fancyhdr,lastpage}
+\usepackage{enumerate}
+\usepackage[textsize=scriptsize,colorinlistoftodos]{todonotes}
+\usepackage{comment}
+%\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{cleveref}
+\usepackage[nolist]{acronym}
+\input{cfg/acronyms.tex}
+
+\usetikzlibrary{positioning,shapes,shadows,arrows}
+
+\newcommand{\tick}[0]{\ding{51}}
+\newcommand{\cross}[0]{\ding{55}}
+\newcommand{\xmark}{\ding{53}}%
+
+\newcommand\raki{\textsc{RAKI}\xspace}
+
+
+\graphicspath{{.}{../Common/}}
+
+\renewcommand{\arraystretch}{1.5}
+\sloppy
+
+\definecolor{LodBlue}{RGB}{22,91,18}
+\definecolor{LodGray}{gray}{0.35}
+\definecolor{LodLink}{RGB}{22,91,18}
+\definecolor{LodCite}{RGB}{22,91,18}
+\definecolor{LodUrl}{RGB}{22,91,18}
+
+\hypersetup{linkcolor=LodLink,citecolor=LodCite,urlcolor=LodUrl}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+\newcommand{\done}[1]{\todo[color=green!40]{#1}}
+\newcommand{\ask}[1]{\todo[color=red!40]{#1}}
+\newcommand{\remark}[1]{\todo[color=blue!40]{#1}}
+\newcommand{\remarki}[1]{\todo[inline,color=blue!40]{#1}}
+\newcommand{\task}[1]{\todo[color=blue!10,inline]{\ding{45} #1}}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%%%FONTS%%%
+
+%redefine paragraph - new line after
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% \newcommand\headintro[1]{\vspace{2cm}\noindent{\fontdaxmedium\color{LodGray}\Large #1}\vspace{.5cm}}
+\newcommand\headintro[1]{\vspace{2cm}\noindent{\color{LodGray}\Large #1}\vspace{.5cm}}
+
+\newcommand\compactlist{\setlength{\itemsep}{0pt}\setlength{\parskip}{6pt}}
+
+\renewcommand\contentsname{Table of Contents}
+\renewcommand\listfigurename{}
+\renewcommand\listtablename{}
+
+%%%PAGE
+\setlength{\headheight}{24pt}
+\pagestyle{fancy}
+\renewcommand\footruleskip{1pt}
+\lhead{\begin{textblock}{100}(17,5)
+\includegraphics[width=3cm,keepaspectratio]{logo/raki.png}
+\end{textblock}
+}
+\rhead{\color{LodGray}D\deliverableNum \mbox{ }- v. \deliverableVer}
+\cfoot{}
+\rfoot{\color{LodGray}Page~\thepage}
+\renewcommand{\headrulewidth}{.4pt}
+\renewcommand{\footrulewidth}{.4pt}
+\renewcommand{\headrule}{\color{LodGray}\vbox to 0pt{\hbox to\headwidth{\dotfill}\vss}}
+\renewcommand{\footrule}{\color{LodGray}\vbox to 0pt{\hbox to\headwidth{\dotfill}\vss}}
+%
+%
+% set up the title page
+%
+%
+\def\deliverableNum{0.0.1}
+\def\deliverableTitle{alpha}
+\def\deliverableVer{1.0}
+\def\deliverableDisseminationLevel{Public}
+\def\deliverableDeliverableDate{Month 30, 29/05/2020}
+\def\deliverableSubmissionDate{Month 30, 29/05/2020}
+\def\deliverableWorkPackage{AP1 -  TODO}
+\def\deliverableTask{T.1.2.}
+\def\deliverableType{document}
+\def\deliverableApprovalStatus{final}
+\def\deliverableAbstract{
+ This deliverable presents ...\task{add content}
+}
+%
+%
+% document
+%
+%
+\begin{document}
+%
+\begin{titlepage}
+  \input{cfg/titlepage} % titlepage.tex
+\end{titlepage}
+%
+\setlength\parindent{0.75cm}
+\setlength\leftskip{0pt}
+\setlength{\parskip}{6pt}
+
+\clearpage
+
+\headintro{History}
+
+\noindent
+\begin{tabular}{p{1.5cm}|p{2.5cm}|p{5cm}|p{5cm}}
+\cellcolor{LodBlue}\textbf{Version}     &
+\cellcolor{LodBlue}\textbf{Date}     &
+\cellcolor{LodBlue}\textbf{Reason}     &
+\cellcolor{LodBlue}\textbf{Revised by}     \\ \hline
+0.1 & 31/01/2020 & Final version created & René Speck \\ \hline
+\end{tabular}
+
+\headintro{Author List}
+
+\noindent
+\begin{tabular}{p{2.5cm}|p{5cm}|p{7.5cm}}
+\cellcolor{LodBlue}\textbf{Organization}     &
+\cellcolor{LodBlue}\textbf{Name}     &
+\cellcolor{LodBlue}\textbf{Contact Information}  \\ \hline
+ULEI    & René Speck & rene.speck@uni-leipzig.de \\\hline
+\end{tabular}
+
+\clearpage
+
+\input{content} % content.tex
+
+\clearpage
+
+\addcontentsline{toc}{section}{References}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+%\bibliography{aksw,refs}
+\end{document}
